@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5581080929900263342}
   - component: {fileID: 5581080929900263341}
   - component: {fileID: 5581080929900263340}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Jogador
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 42363907
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 159147930, guid: 6a857882c6ef3d440b55631bf951ae42, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -160,8 +160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vel: 3
-  torreta1: {fileID: 5581080930111585578}
-  torreta2: {fileID: 5581080930771065608}
+  velTiro: 7
+  Bala: {fileID: 2418793539648187510, guid: 43373b2ea26edee478126e62b2d0a88e, type: 3}
 --- !u!1 &5581080930111585579
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +171,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5581080930111585578}
-  m_Layer: 0
+  - component: {fileID: 965441626}
+  m_Layer: 9
   m_Name: torreta1
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
@@ -193,6 +194,21 @@ Transform:
   m_Father: {fileID: 5581080929900263343}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &965441626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5581080930111585579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f46c19143e0c348b5cc4719a38f1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vel: 3
+  velTiro: 7
+  Bala: {fileID: 2418793539648187510, guid: 43373b2ea26edee478126e62b2d0a88e, type: 3}
 --- !u!1 &5581080930771065609
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +218,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5581080930771065608}
-  m_Layer: 0
+  - component: {fileID: 1658478204}
+  m_Layer: 9
   m_Name: torreta2
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
@@ -224,3 +241,18 @@ Transform:
   m_Father: {fileID: 5581080929900263343}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1658478204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5581080930771065609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f46c19143e0c348b5cc4719a38f1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vel: 3
+  velTiro: 7
+  Bala: {fileID: 2418793539648187510, guid: 43373b2ea26edee478126e62b2d0a88e, type: 3}

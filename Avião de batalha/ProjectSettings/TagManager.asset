@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Jogador
+  - Tiro
+  - Inimigos
+  - Objetos
   layers:
   - Default
   - TransparentFX
@@ -11,10 +15,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Tiro
+  - Objetos
+  - Inimigos
+  - Jogador
   - 
   - 
   - 
@@ -40,4 +44,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Tiro
+    uniqueID: 2643925069
+    locked: 0
+  - name: Jogador
+    uniqueID: 42363907
+    locked: 0
+  - name: Inimigos
+    uniqueID: 2731216999
+    locked: 0
+  - name: Objetos
+    uniqueID: 516438309
     locked: 0

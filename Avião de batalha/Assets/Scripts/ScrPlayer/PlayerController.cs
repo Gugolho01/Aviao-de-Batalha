@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D meuRB;
-
-    [SerializeField] private float vel = 3f;
-    [SerializeField] private float velTiro = 7f;
-    [SerializeField] private GameObject Bala;
+    protected float distance;
+    [SerializeField] private float vel = 7f;
+    [SerializeField] private Transform mouseObj;
+    protected float balaScale = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,23 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Calculando a distancia
+        distance = Vector3.Distance(transform.position, mouseObj.transform.position);
+        distance -= 9.5f;
+
+        if(distance > 5f)
+        {
+            balaScale = 0.001f;
+        } else if (distance > 3f)
+        {
+            balaScale = 0.01f;
+        } else if (distance < 3f)
+        {
+            balaScale = .1f;
+        }
+
+        Debug.Log(distance);
+
         Movendo();
     }
 
@@ -41,27 +58,5 @@ public class PlayerController : MonoBehaviour
         }
 
 
-    }
-    //Atirando só se estou visivel
-    protected void Atirando()
-    {
-        
-        //Atirando
-            
-        var tiro1 = Instantiate(Bala, transform.position, transform.rotation);
-
-        //Encontrando o valor da direção que é pra ir
-        //pegando a direção que é pra ir
-        Vector2  dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        //Normalizando a velocidade dele
-        dir.Normalize();
-
-        tiro1.transform.eulerAngles = new Vector3(0f, 0f, angle);
-
-        //Dando a direção e velocidade pro tiro
-        tiro1.GetComponent<Rigidbody2D>().velocity = dir * velTiro;
-
-        Debug.DrawRay(tiro1.transform.position, dir, Color.red, 5f);
     }
 }
