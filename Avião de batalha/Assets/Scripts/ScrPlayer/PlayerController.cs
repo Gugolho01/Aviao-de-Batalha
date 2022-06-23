@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour
             balaScale = .1f;
         }
 
-        Debug.Log(distance);
 
         Movendo();
     }
