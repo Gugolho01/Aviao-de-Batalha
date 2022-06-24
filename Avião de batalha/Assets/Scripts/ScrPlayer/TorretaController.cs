@@ -23,7 +23,7 @@ public class TorretaController : PlayerController
     // Update is called once per frame
     void Update()
     {
-        recarga = Input.GetKeyDown("r");
+
 
         //Pegando o botão de atirar, vendo se tem bala, e se ele não está recarregando
         if (Input.GetButtonDown("Fire1") && qtdBala > 0 && timerRecarrega <= 0f)
@@ -31,12 +31,21 @@ public class TorretaController : PlayerController
             Atirando();
         }
 
+        Recarregando();
+    }
+
+    //Sistema de recarregamento
+    private void Recarregando()
+    {
+        //Apertando R
+        recarga = Input.GetKeyDown("r");
+
         //Vendo se acabou as balas para aumentar o timerRecarregar, ou de ele apertou R e se o tempo acabou
         if ((qtdBala <= 0 || recarga) && timerRecarrega <= 0)
         {
-           timerRecarrega = 3f;
-           recarga = false;
-            
+            timerRecarrega = 3f;
+            recarga = false;
+
         }
 
         //Recarregando caso o timer chegue a zero, e ele não tenha balas
@@ -45,7 +54,7 @@ public class TorretaController : PlayerController
             timerRecarrega -= Time.deltaTime;
 
             //Colocando o maxmo de balas
-            if(timerRecarrega <= 0)
+            if (timerRecarrega <= 0)
             {
                 qtdBala = maxBala;
             }
