@@ -130,10 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1571686479, guid: 8d7dc4147b70c2a419e4736798d574d2, type: 3}
-      propertyPath: m_Radius
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 2139577489474148363, guid: 8d7dc4147b70c2a419e4736798d574d2, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -248,6 +244,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 965441626, guid: 3001473de72090845a3fe2d8742a0eb7, type: 3}
+      propertyPath: timerRecarrega
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658478204, guid: 3001473de72090845a3fe2d8742a0eb7, type: 3}
+      propertyPath: timerRecarrega
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5581080929900263338, guid: 3001473de72090845a3fe2d8742a0eb7, type: 3}
       propertyPath: m_Name
       value: Player

@@ -7,8 +7,11 @@ public class TorretaController : PlayerController
 {
     [SerializeField] private GameObject Bala;
     [SerializeField] private float velTiro = 7f;
+
+    [SerializeField] private int qtdBala = 10;
+    [SerializeField] private int maxBala = 10;
     
-    
+    [SerializeField] private float timerRecarrega = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,10 +22,21 @@ public class TorretaController : PlayerController
     // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetButtonDown("Fire1"))
+        //Pegando o botão de atirar, vendo se tem bala, e se ele não está recarregando
+        if (Input.GetButtonDown("Fire1") && qtdBala > 0 && timerRecarrega <= 0f)
         {
             Atirando();
+        }
+        //Recarregando caso o timer chegue a zero, e ele não tenha balas
+        if(timerRecarrega >= 0f && qtdBala <= 0)
+        {
+            timerRecarrega -= Time.deltaTime;
+
+            //Colocando o maxmo de balas
+            if(timerRecarrega <= 0)
+            {
+                qtdBala = maxBala;
+            }
         }
     }
 
@@ -30,7 +44,7 @@ public class TorretaController : PlayerController
     protected void Atirando()
     {
         //Atirando
-
+        qtdBala--;
         var tiro1 = Instantiate(Bala, transform.position, transform.rotation);
 
         //Encontrando o valor da direção que é pra ir
@@ -46,5 +60,11 @@ public class TorretaController : PlayerController
         tiro1.GetComponent<Rigidbody2D>().velocity = dir * velTiro;
 
         Debug.DrawRay(tiro1.transform.position, dir, Color.red, 5f);
+
+        if(qtdBala <= 0)
+        {
+            Debug.Log("to sem");
+            timerRecarrega = 3f;
+        }
     }
 }
