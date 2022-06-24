@@ -6,7 +6,7 @@ public class MiraController : MonoBehaviour
 {
     
     [SerializeField] private Transform pointer;
-    [SerializeField] private Transform mouseObj;
+    [SerializeField] protected Transform mouse;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,6 @@ public class MiraController : MonoBehaviour
         mousePos.z = 0.5f;
 
         pointer.position = Camera.main.ScreenToWorldPoint(mousePos);
-        mouseObj.position = Camera.main.ScreenToWorldPoint(mousePos);
+        mouse.position = Camera.main.ScreenToWorldPoint(mousePos);
     }
 }

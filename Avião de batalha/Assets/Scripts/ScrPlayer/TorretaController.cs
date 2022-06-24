@@ -7,6 +7,8 @@ public class TorretaController : PlayerController
 {
     [SerializeField] private GameObject Bala;
     [SerializeField] private float velTiro = 7f;
+    
+    
 
     // Start is called before the first frame update
     void Start()

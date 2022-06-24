@@ -5,10 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D meuRB;
-    protected float distance;
     [SerializeField] private float vel = 7f;
-    [SerializeField] private Transform mouseObj;
-    protected float balaScale = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,22 +17,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Calculando a distancia
-        distance = Vector3.Distance(transform.position, mouseObj.transform.position);
-        distance -= 9.5f;
-
-        if(distance > 5f)
-        {
-            balaScale = 0.001f;
-        } else if (distance > 3f)
-        {
-            balaScale = 0.01f;
-        } else if (distance < 3f)
-        {
-            balaScale = .1f;
-        }
-
-
         Movendo();
     }
 

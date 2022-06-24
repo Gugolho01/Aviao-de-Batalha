@@ -160,8 +160,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vel: 3
-  velTiro: 7
-  Bala: {fileID: 2418793539648187510, guid: 43373b2ea26edee478126e62b2d0a88e, type: 3}
 --- !u!1 &5581080930111585579
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,8 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vel: 3
+  Bala: {fileID: 2249995947694855418, guid: 78c31167a6bdc9e4eb07b8b9df31c22e, type: 3}
   velTiro: 7
-  Bala: {fileID: 2418793539648187510, guid: 43373b2ea26edee478126e62b2d0a88e, type: 3}
 --- !u!1 &5581080930771065609
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,5 +252,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vel: 3
+  Bala: {fileID: 2249995947694855418, guid: 78c31167a6bdc9e4eb07b8b9df31c22e, type: 3}
   velTiro: 7
-  Bala: {fileID: 2418793539648187510, guid: 43373b2ea26edee478126e62b2d0a88e, type: 3}
